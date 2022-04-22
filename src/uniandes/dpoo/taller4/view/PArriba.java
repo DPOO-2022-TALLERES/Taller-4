@@ -1,5 +1,6 @@
 package uniandes.dpoo.taller4.view;
 
+import java.awt.Color;
 import java.awt.GridBagLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -17,19 +18,28 @@ public class PArriba extends JPanel implements ItemListener{
 	private ButtonGroup grupoBotones;
 	private String selection;
 	private JComboBox<String> tamaniocuadricula = new JComboBox<>(listamatriculas);
+	Color lightblue = new Color(51,136,255);
 	
 	PArriba(){
 		this.setLayout(new GridBagLayout());
 		
 		JLabel tamanio = new JLabel("Tamanio: ");
+		tamanio.setForeground(Color.white);
 		
 		JLabel dificultad = new JLabel("Dificultad");
+		dificultad.setForeground(Color.white);
 		
-		JRadioButton facil = new JRadioButton("Fácil");
+		JRadioButton facil = new JRadioButton("Facil");
+		facil.setForeground(Color.white);
+		facil.setBackground(lightblue);
 		
 		JRadioButton medio = new JRadioButton("Medio");
+		medio.setForeground(Color.white);
+		medio.setBackground(lightblue);
 		
 		JRadioButton dificil = new JRadioButton("Dificil");
+		dificil.setForeground(Color.white);
+		dificil.setBackground(lightblue);
 		
 		this.grupoBotones = new ButtonGroup();
 		grupoBotones.add(facil);
@@ -43,6 +53,8 @@ public class PArriba extends JPanel implements ItemListener{
 		this.add(medio);
 		this.add(dificil);
 		tamaniocuadricula.addItemListener(this);
+		
+		setBackground(lightblue);
 		
 		
 	}
