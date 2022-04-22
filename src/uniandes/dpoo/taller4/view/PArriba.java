@@ -72,17 +72,6 @@ public class PArriba extends JPanel implements ItemListener, ActionListener{
 		
 		
 	}
-	
-	public int getTamanio(){
-		int tamanio = Integer.parseInt(selection.substring(0, 2).strip());
-		return tamanio;
-	}
-
-	public int getDificultad(){
-		String d = Integer.toString(difSelection);
-		JOptionPane.showMessageDialog(null, d);
-		return difSelection;
-	}
 
 	@Override
 	public void itemStateChanged(ItemEvent e) {
@@ -113,5 +102,15 @@ public class PArriba extends JPanel implements ItemListener, ActionListener{
 		}
 	}
 	
+	public int getTamanio(){
+		int tamanio = Integer.parseInt(selection.substring(0, 2).strip());
+		return tamanio;
+	}
+
+	public int getDificultad(){
+		String d = Integer.toString(difSelection);
+		JOptionPane.showMessageDialog(null, d);
+		return difSelection;
+	}
 	
 }
