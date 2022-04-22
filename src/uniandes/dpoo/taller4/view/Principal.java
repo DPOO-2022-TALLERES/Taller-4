@@ -5,12 +5,13 @@ import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 
-
+import com.formdev.flatlaf.FlatLightLaf;
 
 public class Principal extends JFrame{
 
 	public Principal() {
-		this.setSize(1080, 720);
+		FlatLightLaf.install();
+		this.setSize(500, 500);
 		this.setTitle("Light Out");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
@@ -29,7 +30,6 @@ public class Principal extends JFrame{
 	public static void main(String[] args) {
 		Principal fPrincipal = new Principal();
 		fPrincipal.setVisible(true);
-		
-		
+		fPrincipal.setResizable(false);
 	}
 }
