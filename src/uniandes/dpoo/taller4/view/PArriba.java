@@ -1,44 +1,35 @@
 package uniandes.dpoo.taller4.view;
 
-import java.awt.Color;
 import java.awt.GridBagLayout;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PArriba extends JPanel{
+public class PArriba extends JPanel implements ItemListener{
 	
-	private String[] listamatriculas = {"5x5", "6x6", "7x7", "8x8", "9x9", "10x10"};
+	private String[] listamatriculas = {"5 x 5", "6 x 6", "7 x 7", "8 x 8", "9 x 9", "10 x 10"};
 	private ButtonGroup grupoBotones;
-	Color lightblue = new Color(51,136,255);
-	
+	private String selection;
+	private JComboBox<String> tamaniocuadricula = new JComboBox<>(listamatriculas);
 	
 	PArriba(){
 		this.setLayout(new GridBagLayout());
 		
 		JLabel tamanio = new JLabel("Tamanio: ");
-		tamanio.setForeground(Color.white);
-		
-		JComboBox tamaniocuadricula = new JComboBox<>(listamatriculas);
 		
 		JLabel dificultad = new JLabel("Dificultad");
-		dificultad.setForeground(Color.white);
 		
 		JRadioButton facil = new JRadioButton("Fácil");
 		
-		facil.setBackground(lightblue);
-		facil.setForeground(Color.white);
-		
 		JRadioButton medio = new JRadioButton("Medio");
-		medio.setBackground(lightblue);
-		medio.setForeground(Color.white);
 		
 		JRadioButton dificil = new JRadioButton("Dificil");
-		dificil.setBackground(lightblue);
-		dificil.setForeground(Color.white);
 		
 		this.grupoBotones = new ButtonGroup();
 		grupoBotones.add(facil);
@@ -51,14 +42,28 @@ public class PArriba extends JPanel{
 		this.add(facil);
 		this.add(medio);
 		this.add(dificil);
-		
-		
-		setBackground(lightblue);
-		
+		tamaniocuadricula.addItemListener(this);
 		
 		
 	}
 	
-	
+	public int getTamanio(){
+		int tamanio = Integer.parseInt(selection.substring(0, 2).strip());
+		return tamanio;
+	}
 
+	public void getDificultad(){
+		
+	}
+
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+		
+		if (e.getSource() == tamaniocuadricula) {
+			selection = tamaniocuadricula.getSelectedItem().toString();
+
+		}
+	}
+	
+	
 }
