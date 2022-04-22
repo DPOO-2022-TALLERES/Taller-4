@@ -25,6 +25,9 @@ public class Principal extends JFrame{
 		PArriba pArriba = new PArriba();
 		this.add(pArriba, BorderLayout.NORTH);
 		
+		PTablero pTablero = new PTablero();
+		this.add(pTablero, BorderLayout.CENTER);
+		
 		}
 	
 	public static void main(String[] args) {
