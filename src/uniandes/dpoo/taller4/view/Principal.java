@@ -23,7 +23,8 @@ public class Principal extends JFrame{
 		
 		PArriba pArriba = new PArriba();
 		this.add(pArriba, BorderLayout.NORTH);
-	}
+		
+		}
 	
 	public static void main(String[] args) {
 		Principal fPrincipal = new Principal();
