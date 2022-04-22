@@ -36,7 +36,7 @@ public class PTablero extends JPanel  implements MouseListener, Observer {
 		g.setColor(new Color (255,255,255));
 		g.fillRect(0, 0, this.getWidth(), this.getHeight());
 		g.setColor(new Color (0,0,0));
-		this.numeroCasillas = 10;
+		this.numeroCasillas = 5;
 		
 		for (int i =1 ; i<numeroCasillas; i++) {
 			g.drawLine(0, i*this.getHeight()/numeroCasillas, this.getWidth(), this.getHeight()*i/numeroCasillas);
@@ -45,6 +45,8 @@ public class PTablero extends JPanel  implements MouseListener, Observer {
 		
 		for(int x = 0; x<numeroCasillas; x++) {
 			for (int y = 0; y <numeroCasillas; y++) {
+				g.setColor(new Color (0,0,0));
+				g.fillRect((this.getWidth()/numeroCasillas*x)+6, (this.getHeight()/numeroCasillas * y)+6, (this.getWidth()/numeroCasillas)-9, (this.getHeight()/numeroCasillas)-9);
 				g.drawImage(luz,(x)*this.getWidth()/numeroCasillas,y * this.getHeight()/numeroCasillas, this.getWidth()/numeroCasillas, this.getHeight()/numeroCasillas, null);
 			}	
 		}
