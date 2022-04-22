@@ -21,33 +21,28 @@ public class PBotones extends JPanel{
 		int x,y;
 		
 		JButton buttonNuevo = new JButton("Nuevo");
-		ButtonPosition(buttonNuevo);
-		addButton(buttonNuevo, x = 1, y = 0);
+		addButton(buttonNuevo, x = 1, y = 0, buttonNuevo);
 		
 		JButton buttonReiniciar = new JButton("Reiniciar");
-		ButtonPosition(buttonReiniciar);
-		addButton(buttonReiniciar , x = 1, y = 1);
+		addButton(buttonReiniciar , x = 1, y = 1, buttonReiniciar);
 		
 		JButton buttonTop = new JButton("TOP - 10");
-		ButtonPosition(buttonTop);
-		addButton(buttonTop, x = 1, y = 2);
+		addButton(buttonTop, x = 1, y = 2,buttonTop);
 		
 		JButton buttonCambiarJugador = new JButton("Cambiar Jugador");
-		ButtonPosition(buttonCambiarJugador);
-		addButton(buttonCambiarJugador, x = 1, y = 3);
+		addButton(buttonCambiarJugador, x = 1, y = 3, buttonCambiarJugador);
 		
 	}
 	
-	void addButton(Component component, int x, int y) {
+	void addButton(Component component, int x, int y,JButton button) {
         constraints.gridx = x;
         constraints.gridy = y;
         constraints.insets = new Insets(5, 0, 5, 0);
         constraints.fill = GridBagConstraints.HORIZONTAL;
+        button.setAlignmentX(this.CENTER_ALIGNMENT);
         add(component, constraints);
       }
 	
-	void ButtonPosition(JButton button) {
-		button.setAlignmentX(this.CENTER_ALIGNMENT);
-	}
+
 	
 }
