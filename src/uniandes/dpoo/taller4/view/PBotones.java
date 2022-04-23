@@ -7,13 +7,15 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class PBotones extends JPanel{
+public class PBotones extends JPanel {
 	GridBagConstraints constraints = new GridBagConstraints();
 	Color lightblue = new Color(51,136,255);
 
@@ -32,6 +34,13 @@ public class PBotones extends JPanel{
 		JButton buttonCambiarJugador = new JButton("Cambiar Jugador");
 		addButton(buttonCambiarJugador, 1, 3, buttonCambiarJugador);
 		
+		buttonTop.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				puntuacion j = new puntuacion();
+				j.setVisible(true);
+			}
+		});
 	}
 	
 	void addButton(Component component, int x, int y,JButton button) {
@@ -45,6 +54,7 @@ public class PBotones extends JPanel{
         
         add(component, constraints);
       }
+
 	
 
 	

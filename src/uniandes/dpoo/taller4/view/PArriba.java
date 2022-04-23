@@ -64,7 +64,6 @@ public class PArriba extends JPanel implements ItemListener, ActionListener{
 		this.add(medio);
 		this.add(dificil);
 		this.add(changeDif);
-		grupoBotones.getSelection();
 		setBackground(lightblue);
 		
 		tamaniocuadricula.addItemListener(this);
@@ -78,7 +77,6 @@ public class PArriba extends JPanel implements ItemListener, ActionListener{
 		
 		if (e.getSource() == tamaniocuadricula) {
 			selection = tamaniocuadricula.getSelectedItem().toString();
-
 		}
 	}
 
@@ -87,7 +85,6 @@ public class PArriba extends JPanel implements ItemListener, ActionListener{
 		if (e.getSource() == changeDif ) {
 			changeDificulty();
 		}
-		
 	
 	}
 	protected void changeDificulty() {
@@ -108,8 +105,6 @@ public class PArriba extends JPanel implements ItemListener, ActionListener{
 	}
 
 	public int getDificultad(){
-		String d = Integer.toString(difSelection);
-		JOptionPane.showMessageDialog(null, d);
 		return difSelection;
 	}
 	
